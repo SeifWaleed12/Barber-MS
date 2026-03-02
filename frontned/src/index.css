@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background-color: #F8FAFC;
+  color: #0F172A;
+  font-size: 18px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+.font-heading {
+  font-family: 'Cairo', sans-serif;
+}
+
+/* Brand name always in English style */
+.brand-name {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+/* Gradient button */
+.btn-gradient {
+  background: linear-gradient(135deg, #E94560, #C81D3D);
+  color: white;
+  font-weight: 700;
+  border: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px 0 rgba(233, 69, 96, 0.39);
+}
+
+.btn-gradient:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+.btn-gradient:active {
+  transform: scale(0.98);
+}
+
+.btn-gradient:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Card glow effect */
+.card-glow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.3s ease;
+}
+
+.card-glow:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Money amount styling */
+.money {
+  color: #10B981;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Skeleton animation */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #F1F5F9 25%, #E2E8F0 50%, #F1F5F9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 0.5rem;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+    direction: rtl;
+  }
+}
+
+/* Input number stepper hide */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Bottom nav safe area */
+.pb-bottom-nav {
+  padding-bottom: 90px;
+}
+
+/* Active bottom nav glow */
+.bottom-nav-active {
+  color: #E94560;
+  position: relative;
+}
+
+.bottom-nav-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 3px;
+  background: linear-gradient(135deg, #E94560, #C81D3D);
+  border-radius: 2px;
+}
