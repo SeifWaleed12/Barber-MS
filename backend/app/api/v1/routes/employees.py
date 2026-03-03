@@ -35,7 +35,6 @@ async def create_employee(
         db,
         owner_id=current_user.id,
         name=body.name,
-        phone=body.phone,
         salary=body.salary,
     )
     return employee

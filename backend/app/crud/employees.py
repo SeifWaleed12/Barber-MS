@@ -24,12 +24,11 @@ async def get_employees(
 
 
 async def create_employee(
-    db: AsyncSession, owner_id: uuid.UUID, name: str, phone: str | None, salary: float
+    db: AsyncSession, owner_id: uuid.UUID, name: str, salary: float
 ) -> Employee:
     employee = Employee(
         owner_id=owner_id,
         name=name,
-        phone=phone,
         salary=salary,
     )
     db.add(employee)
